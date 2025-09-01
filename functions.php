@@ -113,10 +113,6 @@ function add_additional_class_on_a($classes, $item, $args)
 }
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
 
-//ナビゲーションジェネレーター
-require_once get_template_directory() . '/parts/public/nav-generator.php';
-
-
 // 投稿の抜粋文字数をカスタマイズ
 function custom_excerpt_length($length)
 {

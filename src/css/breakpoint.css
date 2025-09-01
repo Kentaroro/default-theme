@@ -1,0 +1,4 @@
+@theme {
+  --breakpoint-pc: var(--breakpoint-lg);
+  --breakpoint-tb: var(--breakpoint-sm);
+}

@@ -46,10 +46,18 @@ function enqueue_theme_assets()
         wp_get_theme()->get('Version')
     );
 
+    // swiper.css
+    wp_enqueue_style(
+        'swiper-style',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        wp_get_theme()->get('Version')
+    );
+
     // jQuery（WordPressに含まれているもの）
     wp_enqueue_script('jquery');
 
-    // GSAPのJS
+    // gsap.js
     wp_enqueue_script(
         'gsap-script',
         'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js',
@@ -60,6 +68,22 @@ function enqueue_theme_assets()
     wp_enqueue_script(
         'gsap-scrolltrigger-script',
         'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
+        array('jquery'),
+        wp_get_theme()->get('Version'),
+        true
+    );
+    wp_enqueue_script(
+        'gsap-splittext-script',
+        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js',
+        array('jquery'),
+        wp_get_theme()->get('Version'),
+        true
+    );
+
+    // Swiper.js
+    wp_enqueue_script(
+        'swiper-script',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
         array('jquery'),
         wp_get_theme()->get('Version'),
         true
@@ -112,6 +136,8 @@ function add_additional_class_on_a($classes, $item, $args)
     return $classes;
 }
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
+
+
 
 // 投稿の抜粋文字数をカスタマイズ
 function custom_excerpt_length($length)
@@ -210,4 +236,4 @@ function create_post_type()
 add_action('init', 'create_post_type');
 
 // 記事の自動整形を無効化
-remove_filter('the_content', 'wpautop');
+/* remove_filter('the_content', 'wpautop'); */

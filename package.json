@@ -1,5 +1,5 @@
 {
-  "name": "default-theme",
+  "name": "animation-sample",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,12 +9,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.8",
-    "postcss": "^8.5.4",
-    "tailwindcss": "^4.1.8"
+    "@tailwindcss/postcss": "*",
+    "postcss": "*",
+    "tailwindcss": "*"
   },
   "devDependencies": {
-    "cssnano": "^7.0.7",
-    "postcss-cli": "^11.0.1"
+    "cssnano": "*",
+    "postcss-cli": "*"
   }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Excerpt Customization
  * 
@@ -12,8 +13,6 @@ if (!defined('ABSPATH')) {
 /**
  * 抜粋文字数のカスタマイズ
  * 
- * @param int $length デフォルトの文字数
- * @return int カスタマイズ後の文字数
  */
 function custom_excerpt_length($length)
 {
@@ -24,8 +23,6 @@ add_filter('excerpt_length', 'custom_excerpt_length');
 /**
  * 抜粋の省略記号をカスタマイズ
  * 
- * @param string $more デフォルトの省略記号
- * @return string カスタマイズ後の省略記号
  */
 function custom_excerpt_more($more)
 {

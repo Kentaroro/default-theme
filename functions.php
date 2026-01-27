@@ -28,7 +28,6 @@ require_once get_template_directory() . '/functions/security/file-upload.php';  
 
 // コンテンツカスタマイズ
 require_once get_template_directory() . '/functions/content/excerpt-custom.php';   // 抜粋カスタマイズ
-require_once get_template_directory() . '/functions/content/menu-classes.php';     // メニュークラス追加
 
 // ユーティリティ・コンポーネント
 require_once get_template_directory() . '/functions/utility.php';                  // 共通ユーティリティ

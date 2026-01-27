@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Post Types Registration
  * 
@@ -14,11 +15,11 @@ if (!defined('ABSPATH')) {
  */
 function create_post_type()
 {
-    // お知らせ【英語】
+    // お知らせ
     register_post_type(
-        'news-en',
+        'news',
         array(
-            'label' => 'お知らせ【英語】',
+            'label' => 'お知らせ',
             'public' => true,
             'has_archive' => true,
             'show_in_rest' => true,
@@ -35,28 +36,6 @@ function create_post_type()
             ),
         )
     );
-
-    // お知らせ【日本語】
-    register_post_type(
-        'news-ja',
-        array(
-            'label' => 'お知らせ【日本】',
-            'public' => true,
-            'has_archive' => true,
-            'show_in_rest' => true,
-            'menu_position' => 6,
-            'supports' => array(
-                'title',
-                'editor',
-                'thumbnail',
-                'revisions',
-            ),
-            'rewrite' => array(
-                'slug' => 'ja/news',
-                'with_front' => false,
-            ),
-        )
-    );
 }
 add_action('init', 'create_post_type');
 
@@ -68,7 +47,7 @@ add_action('init', 'create_post_type');
 function custom_posts_per_page($query)
 {
     if (!is_admin() && $query->is_main_query()) {
-        if (is_post_type_archive('news-en') || is_post_type_archive('news-ja')) {
+        if (is_post_type_archive('news')) {
             $query->set('posts_per_page', 2);
         }
     }

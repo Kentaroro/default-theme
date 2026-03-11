@@ -3,18 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "watch": "postcss src/css/input.css -o assets/css/custom.css --watch"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@tailwindcss/postcss": "*",
-    "postcss": "*",
-    "tailwindcss": "*"
   },
   "devDependencies": {
-    "cssnano": "*",
-    "postcss-cli": "*"
   }
 }

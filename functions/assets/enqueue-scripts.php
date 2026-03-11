@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Assets Enqueue Management
  * 
@@ -16,7 +17,6 @@ function enqueue_theme_assets()
 {
     $theme_version = wp_get_theme()->get('Version');
 
-    // テーマのメインCSS
     wp_enqueue_style(
         'theme-style',
         get_stylesheet_uri(),
@@ -24,12 +24,15 @@ function enqueue_theme_assets()
         $theme_version
     );
 
-    // jQuery（WordPressに含まれているもの）
-    wp_enqueue_script('jquery');
+    wp_enqueue_style(
+        'main-css',
+        get_template_directory_uri() . '/assets/css/main.css',
+        array(),
+        $theme_version
+    );
 
-    // カスタムスクリプト
     wp_enqueue_script(
-        'custom-script',
+        'main-js',
         get_template_directory_uri() . '/assets/js/main.js',
         array('jquery'),
         $theme_version,
